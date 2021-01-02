@@ -1,0 +1,29 @@
+{
+  "name": "myapp",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "server": "concurrently \"npm run dev\" \"npm run sass\"",
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www",
+    "sass": "node-sass -w public/stylesheets -o public/stylesheets",
+    "image": "imagemin public/images/aslider/* --out-dir public/images/slider",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "pug": "2.0.0-beta11"
+  },
+  "devDependencies": {
+    "grunt": "^1.3.0",
+    "grunt-browser-sync": "^2.2.0",
+    "grunt-contrib-nodemon": "^0.5.4",
+    "grunt-contrib-sass": "^2.0.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "nodemon": "^2.0.6"
+  }
+}

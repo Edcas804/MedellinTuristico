@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1rem 0;
+  transition: 0.5s;
+  cursor: pointer;
+  z-index: 1000; }
+
+header h1 {
+  color: #000; }
+
+header .mainMenu ul li {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  list-style: none;
+  display: inline-block;
+  margin: 0 .1rem 0 0; }
+
+header .mainMenu ul li a {
+  color: #000;
+  transition: .5s;
+  text-align: center;
+  text-decoration: none;
+  padding: 0rem 2rem; }
+
+header .mainMenu ul li a:after {
+  content: "";
+  position: absolute;
+  bottom: -1rem;
+  height: 2px;
+  left: 50%;
+  width: 0;
+  display: block;
+  background: #faa;
+  transition: .5s; }
+
+header .mainMenu ul li a:hover:after {
+  width: 100%;
+  left: 0; }
+
+header .mainMenu ul li a:hover {
+  color: #faa; }
+
+.mainSlider {
+  padding: 70px 0 0 0;
+  width: 100%;
+  height: 500px; }
+
+.mainSlider .wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; }
+
+.mainSlider .wrapper .imgSlider {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: fade 8s; }
+
+@keyframes fade {
+  from {
+    transform: scale(1); }
+  to {
+    transform: scale(1.05); } }
+
+.mainSlider .wrapper .dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 10px;
+  width: 100%; }
+
+.mainSlider .wrapper .dots .dot {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  margin: .5rem;
+  z-index: 10;
+  box-shadow: 0px 2px 2px #000;
+  border-radius: 50%;
+  transition: .5s; }
+
+.mainSlider .wrapper .dots .b-black, .mainSlider .wrapper .dots .dot:hover {
+  background: #333; }
+
+.mainSlider .wrapper .textSlider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  bottom: 3rem;
+  width: 100%;
+  z-index: 100; }
+
+.mainSlider .wrapper .textSlider h2, .mainSlider .wrapper .textSlider p {
+  color: #fff;
+  padding: 1rem 0 0 0;
+  text-shadow: 0px 2px 2px #000; }
+
+.mainSlider .wrapper .textSlider h2 {
+  font-size: 3rem; }
+
+.mainSlider .wrapper .textSlider p {
+  font-size: 1.5rem; }
+
+.hide {
+  display: none; }
+
+.white-c {
+  color: #fff; }
+
+.activeMenu {
+  color: #faa; }

@@ -1,0 +1,37 @@
+* {margin:0;padding:0;}
+$white-color : #fff;
+$black-color: #000;
+$hight-color: #faa;
+$topPadding: 70px;
+
+
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin flexCenterCol{
+    @include flexCenter;
+    flex-direction: column;
+}
+@mixin flexAround {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+@import 'src/header', 'src/home';
+
+body {
+}
+
+.hide {
+    display: none;
+}
+.white-c {
+    color: $white-color;
+}
+//clases active
+.activeMenu {
+    color: $hight-color;
+}
