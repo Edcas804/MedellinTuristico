@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
 	title: title
     }
 	
-    res.render('products', locals);
+    res.render('empresas', locals);
 });
 
 module.exports = router;
