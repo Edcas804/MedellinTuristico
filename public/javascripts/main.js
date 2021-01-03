@@ -2,8 +2,8 @@ let l = console.log;
 let dots = document.querySelectorAll('.dots');
 let img = document.querySelectorAll('.imgSlider');
 
-let dot, auto, newInterval = true, index = 0;
-l(newInterval);
+let dot, auto, interval = 8000, newInterval = true, index = 0;
+
 const showDot = () => {
     for(let i = 0; i < img.length; i++){
         dots[0].innerHTML += `<span class="dot" onclick="selectSlider(${i})"></span>`;
@@ -14,20 +14,9 @@ const showDot = () => {
     return changeSlider(1);
 }
 const selectSlider = (x) => {
-    clearInterval(auto);
-    l('stop interval auto');
     index = x;
+		clearInterval(auto);
     slider(index);
-    
-    if(newInterval){
-        setTimeout(function(){
-            auto = setInterval(autoSlides, 4000);
-		l('nuevo intervalo activado')
-        },10000);
-	    
-        newInterval = false;
-l(newInterval);
-    }
 }
 const changeSlider = (n) => {
     index = parseInt(index)+ n;
@@ -46,12 +35,13 @@ const slider = (index) => {
         dots.classList.remove('b-black');
     });
 
-
     img[index].classList.remove('hide');
     dot[index].classList.add('b-black');
-}
-auto = setInterval(autoSlides, 4000);
-function autoSlides(){
-    changeSlider(1);
+
+		auto = setTimeout (autoSlider, interval);
+
+		function autoSlider() {
+        changeSlider(1);
+		}
 }
 showDot();

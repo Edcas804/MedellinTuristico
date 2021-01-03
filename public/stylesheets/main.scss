@@ -1,10 +1,27 @@
+@charset "UFT-8";
 * {margin:0;padding:0;}
+
+html {
+    scroll-behaivoir: smooth ;
+}
+::-webkit-scrollbar {
+    width: 10px;
+		height: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background:#555; 
+		border-radius: 10px;
+}
 $white-color : #fff;
 $black-color: #000;
-$hight-color: #faa;
+$hight-color: #f45;
 $topPadding: 70px;
 
-
+:root {
+    --font-s-small: .8rem; 
+ 		--font-s-medium: 1.1rem; 
+		--font-s-large: 1.2rem;
+}
 @mixin flexCenter {
     display: flex;
     justify-content: center;

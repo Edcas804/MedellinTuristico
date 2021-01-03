@@ -4,53 +4,129 @@
     height: 500px;
     .wrapper {
         position: relative;
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
-	.imgSlider{
-	    width: 100%;
-	    height: 100%;
-            object-fit: cover;	
-	    animation: fade 8s;
-	    @keyframes fade {
-	        from{transform: scale(1)} 
-	        to{transform: scale(1.05)} 
-	    }
-	}
-	.dots{
-	    @include flexCenter;
-            position: absolute;
-            bottom: 10px;	    
-	    width: 100%;
-	    .dot {
-	       width:18px; 
-	       height: 18px; 
-	       display: inline-block;
-	       margin: .5rem;
-	       z-index:10;
-	       box-shadow: 0px 2px 2px $black-color;
-	       border-radius: 50%;
-	       transition: .5s;
-	    }
-            .b-black, .dot:hover{background: #333} 
-	} 
-	.textSlider {
-	    @include flexCenterCol;
-            position: absolute;	
-	    bottom: 3rem;
-	    width: 100%;
-	    z-index: 100;
-	    h2, p {
-	        color: $white-color; 
-		padding: 1rem 0 0 0 ;
-		text-shadow: 0px 2px 2px $black-color;
-	    }
-	    h2{
-	        font-size: 3rem; 
-	    }
-	    p {
-	        font-size: 1.5rem; 
-	    }
-        }
+			  width: 100%;
+			  height: 100%;
+			  overflow: hidden;
+				.imgSlider{
+						width: 100%;
+						height: 100%;
+						object-fit: cover;	
+						animation: fade 8s;
+						@keyframes fade {
+								from{transform: scale(1)} 
+								to{transform: scale(1.05)} 
+						}
+				}
+				.dots{
+						@include flexCenter;
+						position: absolute;
+						bottom: 10px;	    
+						width: 100%;
+						.dot {
+								width:18px; 
+								height: 18px; 
+								display: inline-block;
+								margin: .5rem;
+								z-index:10;
+								box-shadow: 0px 2px 2px $black-color;
+								border-radius: 50%;
+								transition: .5s;
+						}
+						.b-black, .dot:hover{background: $hight-color} 
+				} 
+				.textSlider {
+						@include flexCenterCol;
+						position: absolute;	
+						bottom: 3rem;
+						width: 100%;
+						z-index: 100;
+						h2, p {
+								color: $white-color; 
+								padding: 1rem 0 0 0 ;
+								text-shadow: 0px 2px 2px $black-color;
+						}
+						h2{
+								font-size: 3rem; 
+						}
+						p {
+								font-size: 1.5rem; 
+						}
+				}
     }
+}
+.mainNav {
+		@include flexCenterCol;
+		position: sticky;
+		top: $topPadding - 2px;
+		width: 100%;
+		background: $white-color;
+		box-shadow: 1px 1px 6px  #000;
+//		border-bottom: 2px solid $hight-color;
+    ul {
+        li {
+						display: inline-block;
+						color: $black-color;
+						list-style: none;
+						padding: 1rem;
+						margin: .5rem;
+						cursor: pointer;
+						font-size: var(--font-s-large);
+						transition: .5s;
+						border-radius: 0 0 0 1rem;
+						&:hover {
+                color: $hight-color;
+						}
+						&:nth-child(1){border-left: 2px solid #0f0}
+						&:nth-child(2){border-left: 2px solid #f00}
+						&:nth-child(3){border-left: 2px solid #0af}
+						&:nth-child(4){border-left: 2px solid #fa0}
+						&:nth-child(5){border-left: 2px solid #f0a}
+						&:nth-child(6){border-left: 2px solid #af0}
+				}
+		}
+}
+.mainInfo {
+    padding: 3rem 6rem;    
+		.wrapperInfo {
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr;
+				.cardInfo {
+            @include flexCenterCol;
+						padding: 1rem;
+						h3 {
+                color: $black-color;
+								padding: 1rem 0 0 0;
+								font-size: var(--font-s-large);
+						}
+						p {
+                color: $black-color;
+								padding: 1rem;
+								font-size: var(--font-s-medium);
+						}
+				}	
+				img {
+            object-fit: cover;
+						width: 100%;
+						background: #ccc;
+				}
+				.itemInfo {
+						margin: 0 0 4rem 0;
+				}
+				.itemInfo:nth-child(1){
+						grid-column: 1/2;
+						border-left: 3px solid $hight-color;
+						border-radius:  0 0 0 1rem;
+				}
+				.itemInfo:nth-child(2){
+						grid-column: 2/4;
+				}
+				.itemInfo:nth-child(3){
+						grid-column: 1/3;
+				}
+				.itemInfo:nth-child(4){
+						grid-column: 3/4;
+						border-right: 3px solid $hight-color;
+						border-radius:  0 0 1rem 0;
+				}
+		}
 }
