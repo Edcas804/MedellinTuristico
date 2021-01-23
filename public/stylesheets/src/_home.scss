@@ -52,6 +52,21 @@
 								font-size: 1.5rem; 
 						}
 				}
+				.next-prev {
+						position: absolute;
+						top: 48%;
+						color: $white-color;
+						font-size: 2rem;
+						font-weight: bold;
+						z-index: 100;
+						cursor: pointer;
+						transition: .5s;
+						&:hover {
+								transform: scale(1.05);
+						}
+				}
+				.left {left: 5px}
+				.right {right: 5px}
     }
 }
 .mainNav {

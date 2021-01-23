@@ -1,4 +1,3 @@
-let l = console.log;
 let dots = document.querySelectorAll('.dots');
 let img = document.querySelectorAll('.imgSlider');
 
@@ -8,7 +7,6 @@ const showDot = () => {
     for(let i = 0; i < img.length; i++){
         dots[0].innerHTML += `<span class="dot" onclick="selectSlider(${i})"></span>`;
     }
-
     dot = document.querySelectorAll('.dot');
 
     return changeSlider(1);
@@ -18,7 +16,8 @@ const selectSlider = (x) => {
 		clearInterval(auto);
     slider(index);
 }
-const changeSlider = (n) => {
+const changeSlider = (n, next) => {
+		if(next === 'next') clearInterval(auto);
     index = parseInt(index)+ n;
 
     if(index == img.length) index = 0;

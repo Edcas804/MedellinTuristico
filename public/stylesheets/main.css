@@ -60,7 +60,8 @@ header .mainMenu ul li a {
   text-align: center;
   text-decoration: none;
   padding: 0rem 2rem;
-  font-size: var(--font-s-large); }
+  font-size: var(--font-s-large);
+  border-radius: 0 0 0 1rem; }
 
 header .mainMenu ul li a:after {
   content: "";
@@ -144,6 +145,25 @@ header .mainMenu ul li a:hover {
 
 .mainSlider .wrapper .textSlider p {
   font-size: 1.5rem; }
+
+.mainSlider .wrapper .next-prev {
+  position: absolute;
+  top: 48%;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  z-index: 100;
+  cursor: pointer;
+  transition: .5s; }
+
+.mainSlider .wrapper .next-prev:hover {
+  transform: scale(1.05); }
+
+.mainSlider .wrapper .left {
+  left: 5px; }
+
+.mainSlider .wrapper .right {
+  right: 5px; }
 
 .mainNav {
   display: flex;
@@ -235,6 +255,58 @@ header .mainMenu ul li a:hover {
   grid-column: 3/4;
   border-right: 3px solid #f45;
   border-radius: 0 0 1rem 0; }
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 70px 0;
+  position: relative; }
+
+.container .cardComercio {
+  width: 250px;
+  margin: 1rem;
+  box-shadow: 0px 2px 5px #000;
+  border-radius: .5rem;
+  overflow: hidden; }
+
+.container .cardComercio .img {
+  width: 100%;
+  height: 250px;
+  overflow: hidden; }
+
+.container .cardComercio .img img {
+  width: 100%;
+  height: 100%;
+  border-radius: .5rem  .5rem 0 0;
+  object-fit: cover;
+  transition: 1s; }
+
+.container .cardComercio .info {
+  padding: .3rem; }
+
+.container .cardComercio:hover .img img {
+  transform: scale(1.1); }
+
+.container .buttonNew {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 3px 3px #000;
+  position: absolute;
+  top: 120px;
+  left: 1rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%; }
+
+.container .buttonNew a {
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 3rem; }
 
 .hide {
   display: none; }

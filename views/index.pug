@@ -3,9 +3,9 @@ extends layout
 block content
     .mainSlider
         .wrapper
+            img.imgSlider.fade(src='/images/slider/background2.jpeg')
             img.imgSlider.fade(src='/images/slider/background.png')
             img.imgSlider.fade(src='/images/slider/background.jpg')
-            img.imgSlider.fade(src='/images/slider/background2.jpeg')
             img.imgSlider.fade(src='/images/slider/background3.jpg')
             img.imgSlider.fade(src='/images/slider/background2.jpeg')
             img.imgSlider.fade(src='/images/slider/background6.jpg')
@@ -13,7 +13,8 @@ block content
             .textSlider
                 h2 Miles de lugares para visitar y disfrutar 
                 p Medellín es el lugar para compartir, soñar y disfrutar los momentos mas increibles de tu vida.
-
+            span.next-prev.left(onclick='changeSlider(-1, "next")') <
+            span.next-prev.right(onclick='changeSlider(1, "next")') > 
     nav.mainNav
         ul
             li Centros comerciales 

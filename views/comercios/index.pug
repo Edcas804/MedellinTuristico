@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+  .container
+    .buttonNew   
+      a(href='/comercios/create') + 
+    each comercio in comercios
+      .cardComercio 
+        .img
+    form(action=´/comercios/${comericio.idl}/create´ method='post')
+          img(src='/images/slider/background.jpg')
+        .info
+          h1.comercioId= comercio.id
+          p= comercio.tipo
+          p= comercio.descripcion
+          p= comercio.ubicacion
+          a(href='comercios/' + comercio.id + '/update') Actualizar
+          p
+            form(method='post' action='comercios/' + comercio.id + '/delete' )
+              input(type='hidden' name='id' value=comercio.id)
+              button(type='submit' name='submit_param' value='submit_value') Eliminar
+

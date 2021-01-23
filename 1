@@ -1,0 +1,26 @@
+let Comercio = function (id, tipo, descripcion, ubicacion) {
+
+		this.id = id;
+		this.tipo = tipo;
+		this.descripcion = descripcion;
+		this.ubicacion = ubicacion;
+}
+
+Comercio.prototype.toString = function (){
+
+		return "id: " + this.id + "tipo: " + this.tipo + "descripcion: " +  this.descripcion;
+}
+
+Comercio.allComercios = [];
+
+Comercio.add = function(aComercio){
+		Comercio.allComercios.push(aComercio);
+}
+
+let a = new Comercio(1, "restaurante", "Para toda ocasión", [-34.60, -58.38]);
+let b = new Comercio(2, "Centro Comercial", "Especializado en técnologia", [-34.60, -58.38]);
+
+Comercio.add(a);
+Comercio.add(b);
+
+module.exports = Comercio;

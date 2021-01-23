@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+    br
+    br
+    br
+    br
+    a(href='/comercios') volver
+    h1 Nuevo comercio
+
+    form(action='/comercios/create' method='post')
+        input#id(type='text' name="id" placeholder='ID:' )
+        input#tipo(type='text' name="tipo" placeholder='Tipo:' )
+        input#descripcion(type='text' name="descripcion" placeholder='descripcion:' )
+        input#lat(type='text' name="lat" placeholder='lat:' )
+        input#lng(type='text' name="lng" placeholder='lng:' )
+        button(type='submit'  ) Enviar
