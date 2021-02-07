@@ -7,7 +7,6 @@ block content
     each comercio in comercios
       .cardComercio 
         .img
-    form(action=´/comercios/${comericio.idl}/create´ method='post')
           img(src='/images/slider/background.jpg')
         .info
           h1.comercioId= comercio.id
@@ -15,8 +14,7 @@ block content
           p= comercio.descripcion
           p= comercio.ubicacion
           a(href='comercios/' + comercio.id + '/update') Actualizar
-          p
+          p 
             form(method='post' action='comercios/' + comercio.id + '/delete' )
               input(type='hidden' name='id' value=comercio.id)
               button(type='submit' name='submit_param' value='submit_value') Eliminar
-
