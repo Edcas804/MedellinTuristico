@@ -6,7 +6,6 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var contactoRouter = require('./routes/contacto');
-var empresasRouter = require('./routes/empresas');
 var sobreNosotrosRouter = require('./routes/sobre_nosotros');
 var comerciosRouter = require('./routes/comercios');
 
@@ -22,9 +21,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//todas las rutas
 app.use('/', indexRouter);
 app.use('/contacto', contactoRouter);
-app.use('/empresas',empresasRouter);
 app.use('/sobre_nosotros', sobreNosotrosRouter);
 app.use('/comercios', comerciosRouter );
 

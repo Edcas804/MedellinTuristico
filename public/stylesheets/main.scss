@@ -1,40 +1,43 @@
 @charset "UFT-8";
-* {margin:0;padding:0;}
+* {
+  margin: 0;
+  padding: 0;
+}
 
 html {
-    scroll-behaivoir: smooth ;
+  scroll-behaivoir: smooth;
 }
 ::-webkit-scrollbar {
-    width: 10px;
-		height: 10px;
+  width: 10px;
+  height: 10px;
 }
 ::-webkit-scrollbar-thumb {
-    background:#555; 
-		border-radius: 10px;
+  background: #555;
+  border-radius: 10px;
 }
-$white-color : #fff;
+$white-color: #fff;
 $black-color: #000;
 $hight-color: #f45;
 $topPadding: 70px;
 
 :root {
-    --font-s-small: .8rem; 
- 		--font-s-medium: 1.1rem; 
-		--font-s-large: 1.2rem;
+  --font-s-small: 0.8rem;
+  --font-s-medium: 1.1rem;
+  --font-s-large: 1.2rem;
 }
 @mixin flexCenter {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-@mixin flexCenterCol{
-    @include flexCenter;
-    flex-direction: column;
+@mixin flexCenterCol {
+  @include flexCenter;
+  flex-direction: column;
 }
 @mixin flexAround {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 @import 'src/header', 'src/home', 'src/comercios';
@@ -43,12 +46,12 @@ body {
 }
 
 .hide {
-    display: none;
+  display: none;
 }
 .white-c {
-    color: $white-color;
+  color: $white-color;
 }
 //clases active
 .activeMenu {
-    color: $hight-color;
+  color: $hight-color;
 }
