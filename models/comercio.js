@@ -32,22 +32,14 @@ Comercio.removeById = function(aComercioId) {
   }
 };
 
-var a = new Comercio(1, 'restaurante', 'Para toda ocasión', [-34.6, -58.38]);
-var b = new Comercio(2, 'Centro Comercial', 'Especializado en técnologia', [
-  -34.6,
-  -58.38,
+var a = new Comercio(1, 'restaurante', 'Para toda ocasión', [6.251393, -75.595614]);
+var b = new Comercio(2, 'Centro Comercial', 'Especializado en técnologia', [6.258633, -75.557135
 ]);
-var c = new Comercio(3, 'Centro Comercial', 'Especializado en técnologia', [
-  -34.6,
-  -58.38,
+var c = new Comercio(3, 'Centro Comercial', 'Especializado en técnologia', [6.209884, -75.566846
 ]);
-var d = new Comercio(4, 'Centro Comercial', 'Especializado en técnologia', [
-  -34.6,
-  -58.38,
+var d = new Comercio(4, 'Centro Comercial', 'Especializado en técnologia', [6.263218, -75.593429
 ]);
-var e = new Comercio(5, 'Centro Comercial', 'Especializado en técnologia', [
-  -34.6,
-  -58.38,
+var e = new Comercio(5, 'Centro Comercial', 'Especializado en técnologia', [6.267924, -75.556164
 ]);
 
 Comercio.add(a);
