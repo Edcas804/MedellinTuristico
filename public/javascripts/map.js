@@ -13,11 +13,11 @@ $.ajax({
   success: function(result) {
 //    console.log(result);
     result.comercios.forEach(comer => {
-      L.marker(comer.ubicacion, {title: comer.id})
+      L.marker(comer.ubicacion, {title: comer.nombre})
         .addTo(mymap)
         .bindPopup(
          `<p>
-          ${comer.id} <br />
+         <b>${comer.nombre}</b> <br />
           ${comer.tipo} <br />
           ${comer.descripcion} <br />
 		  </p>` 

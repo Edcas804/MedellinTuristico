@@ -9,7 +9,12 @@ exports.Comercios_create_get = function(req, res) {
   res.render('comercios/create');
 };
 exports.Comercios_create_post = function(req, res) {
-  var comer = new Comercio(req.body.id, req.body.tipo, req.body.descripcion);
+  var comer = new Comercio(
+    req.body.id,
+    req.body.nombre,
+    req.body.tipo,
+    req.body.descripcion,
+  );
   comer.ubicacion = [req.body.lat, req.body.lng];
 
   Comercio.add(comer);
@@ -26,6 +31,7 @@ exports.Comercios_update_post = function(req, res) {
   let comercio = Comercio.findById(req.params.id);
 
   comercio.id = req.body.id;
+  comercio.nombre = req.body.nombre;
   comercio.tipo = req.body.tipo;
   comercio.descripcion = req.body.descripcion;
   comercio.ubicacion = [req.body.lat, req.body.lng];
