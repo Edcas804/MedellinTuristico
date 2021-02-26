@@ -43,10 +43,10 @@ var d = new Comercio(4, 'Santa Fe', 'Centro Comercial', 'Especializado en técno
 var e = new Comercio(5, 'Santa Fe', 'Centro Comercial', 'Especializado en técnologia', [6.267924, -75.556164
 ]);
 
-Comercio.add(a);
-Comercio.add(b);
-Comercio.add(c);
-Comercio.add(d);
-Comercio.add(e);
+//Comercio.add(a);
+ //Comercio.add(b);
+ //Comercio.add(c);
+ //Comercio.add(d);
+ //Comercio.add(e);
 
 module.exports = Comercio;

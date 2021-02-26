@@ -7,8 +7,7 @@
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www",
     "sass": "node-sass -w public/stylesheets -o public/stylesheets",
-    "image": "imagemin public/images/aslider/* --out-dir public/images/slider",
-    "clean": "rimraf dist"
+    "test": "jasmine"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -26,7 +25,8 @@
     "grunt-contrib-sass": "^2.0.0",
     "grunt-contrib-watch": "^1.1.0",
     "node-sass": "^5.0.0",
-    "nodemon": "^2.0.6"
+    "nodemon": "^2.0.6",
+    "request": "^2.88.2"
   },
   "main": "app.js",
   "repository": {
