@@ -7,7 +7,10 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var contactoRouter = require('./routes/contacto');
 var sobreNosotrosRouter = require('./routes/sobre_nosotros');
-var comerciosRouter = require('./routes/comercios');
+var establecimientosAdminRouter = require('./routes/adminEstablecimientos');
+//cliente
+var establecimientosRouter= require('./routes/establecimientos');
+//api
 var comerciosApiRouter = require('./routes/api/comercios');
 
 var app = express();
@@ -22,11 +25,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//todas las rutas
+//todas las rutas cliente
 app.use('/', indexRouter);
 app.use('/contacto', contactoRouter);
 app.use('/sobre_nosotros', sobreNosotrosRouter);
-app.use('/comercios', comerciosRouter );
+app.use('/establecimientos', establecimientosRouter);
+//admin
+app.use('/admin/establecimientos', establecimientosAdminRouter );
 //API
 app.use('/api/comercios', comerciosApiRouter);
 

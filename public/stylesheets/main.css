@@ -36,7 +36,10 @@ header .logo {
   justify-content: center;
   align-items: center; }
 
-header .logo h1 {
+header .logo a {
+  text-decoration: none; }
+
+header .logo a h1 {
   color: #000; }
 
 header .logo img {

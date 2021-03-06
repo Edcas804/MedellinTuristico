@@ -1,14 +1,16 @@
 var Comercio = require('../models/comercio');
 
-exports.Comercios_list = function(req, res) {
-  res.render('comercios/index', {comercios: Comercio.allComercios});
+//lista de Establecimientos editables
+exports.Establecimientos_list = function(req, res) {
+  res.render('establecimientos/index', {establecimientos: Comercio.allComercios});
 };
 
+
 //crear
-exports.Comercios_create_get = function(req, res) {
-  res.render('comercios/create');
+exports.Establecimientos_create_get = function(req, res) {
+  res.render('establecimientos/create');
 };
-exports.Comercios_create_post = function(req, res) {
+exports.Establecimientos_create_post = function(req, res) {
   var comer = new Comercio(
     req.body.id,
     req.body.nombre,
@@ -19,15 +21,15 @@ exports.Comercios_create_post = function(req, res) {
 
   Comercio.add(comer);
 
-  res.redirect('/comercios');
+  res.redirect('/admin/establecimientos');
 };
 //actualizar
-exports.Comercios_update_get = function(req, res) {
-  let comercio = Comercio.findById(req.params.id);
+exports.Establecimientos_update_get = function(req, res) {
+  let establecimiento = Comercio.findById(req.params.id);
 
-  res.render('comercios/update', {comercio});
+  res.render('establecimientos/update', {establecimiento});
 };
-exports.Comercios_update_post = function(req, res) {
+exports.Establecimientos_update_post = function(req, res) {
   let comercio = Comercio.findById(req.params.id);
 
   comercio.id = req.body.id;
@@ -36,11 +38,11 @@ exports.Comercios_update_post = function(req, res) {
   comercio.descripcion = req.body.descripcion;
   comercio.ubicacion = [req.body.lat, req.body.lng];
 
-  res.redirect('/comercios');
+  res.redirect('/admin/establecimientos');
 };
 
 //eliminar
-exports.Comercios_delete_post = function(req, res) {
+exports.Establecimientos_delete_post = function(req, res) {
   Comercio.removeById(req.body.id);
-  res.redirect('/comercios');
+  res.redirect('/admin/establecimientos');
 };

@@ -1,0 +1,20 @@
+extends ../layout
+
+block content
+  .container
+    .buttonNew   
+      a(href='/admin/establecimientos/create') + 
+    each establecimiento in establecimientos 
+      .cardComercio
+        .img
+          img(src='/images/slider/background.jpg')
+        .info
+          h1.comercioId= establecimiento.nombre
+          p= establecimiento.tipo
+          p= establecimiento.descripcion
+          p= establecimiento.ubicacion
+          a(href='establecimientos/' + establecimiento.id + '/update') Actualizar
+          p 
+            form(method='post' action='establecimientos/' + establecimiento.id + '/delete' )
+              input(type='hidden' name='id' value=establecimiento.id)
+              button(type='submit' name='submit_param' value='submit_value') Eliminar
