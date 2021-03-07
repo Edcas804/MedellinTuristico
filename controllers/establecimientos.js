@@ -3,8 +3,8 @@ var Comercio = require('../models/comercio');
 exports.Establecimientos_list_client = function (req, res){
     res.render('establecimientos/indexClient', {establecimientos: Comercio.allComercios})
 }
-exports.Establecimientos_findAndShow = function (req, res){
-    let establecimiento = Comercio.findById(req.params.id);
-//	res.status(200).json({establecimiento});
+exports.Establecimientos_findByNameURL = function (req, res){
+    let establecimiento = Comercio.findByNameURL(req.params.id);
+
 	res.render('establecimientos/detalle', {establecimiento})
 }

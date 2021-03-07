@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include('../templates/head', {title: 'Nuevo'})%>
+	<body>
+		<%- include('../templates/header'); %>
+		<br />
+		<br />
+		<br />
+		<br />
+
+		<a href="/admin/establecimientos"> volver</a>
+		<h1>Nuevo</h1>
+		<form action="/admin/establecimientos/create" method="post">
+			<input name="id" type="text" placeholder="Id" />
+			<input name="nombre" type="text" placeholder="Nombre:" />
+			<input name="tipo" type="text" placeholder="Tipo:" />
+			<input name="descripcion" type="text" placeholder="Descripción:" />
+			<input name="lat" type="text" placeholder="Lat:" />
+			<input name="lng" type="text" placeholder="Lng:" />
+			<button type="submit">Nuevo</button>
+		</form>
+	</body>
+</html>

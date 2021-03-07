@@ -1,0 +1,12 @@
+ <% if(className) {%>
+    <div class="wrapperMapModal ">
+		<button class="close-btn" onclick="document.querySelectorAll('.wrapperMapModal')[0].classList.add('hide')">X</button>
+		<div class="containerMap ">
+		   <div id="main_map"></div>
+		</div>
+	</div>
+<% } else {%>
+    <div class="containerMap">
+       <div id="main_map"></div>
+    </div>
+<% } %>  

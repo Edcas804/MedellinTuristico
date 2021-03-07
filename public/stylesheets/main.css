@@ -271,6 +271,38 @@ header .mainMenu ul li a:hover {
   width: 80%;
   height: 600px; }
 
+.wrapperMapModal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.5); }
+
+.wrapperMapModal .containerMap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; }
+
+.wrapperMapModal .containerMap #main_map {
+  width: 80%;
+  height: 600px; }
+
+.wrapperMapModal .close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 3rem;
+  font-weight: bold;
+  background: none;
+  border: none;
+  color: #fff; }
+
 .container {
   display: flex;
   justify-content: center;

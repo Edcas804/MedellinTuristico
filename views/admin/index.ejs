@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../templates/head', {title: 'Establecimientos'})%>
+  <body>
+    <%- include('../templates/header'); %>
+    <div class="container">
+      <div class="buttonNew">
+        <a href="/admin/establecimientos/create">+</a>
+      </div>
+      <% establecimientos.forEach(function(establecimiento){ %>
+      <div class="cardComercio">
+        <div class="img">
+          <img src="/images/slider/background.jpg" alt="" />
+        </div>
+        <div class="info">
+          <h1><%= establecimiento.id %></h1>
+          <p><%= establecimiento.nombre %></p>
+          <p><%= establecimiento.tipo %></p>
+          <p><%= establecimiento.descripcion %></p>
+          <p><%= establecimiento.ubicacion %></p>
+          <a href="establecimientos/<%= establecimiento.id %>/update">
+            Actualizar
+          </a>
+		  <p>
+		  	<form action="establecimientos/<%= establecimiento
+				.id%>/delete" method="post">
+		  		<input type="hidden" name="id" value="<%= establecimiento
+				.id%>">
+		  		<button type="submit" name="submit_param" value="submit_value">Eliminar</button>
+		  	</form>
+		  </p>
+        </div>
+      </div>
+      <% }); %>
+    </div>
+  </body>
+</html>
+
+

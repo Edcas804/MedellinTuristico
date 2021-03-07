@@ -6,6 +6,6 @@ var establecimientosController= require('../controllers/establecimientos');
 router.get('/', establecimientosController.Establecimientos_list_client);
 
 //buscar y mostrar informació de un único comercio
-router.get('/:id', establecimientosController.Establecimientos_findAndShow);
+router.get('/:id', establecimientosController.Establecimientos_findByNameURL);
 
 module.exports = router;

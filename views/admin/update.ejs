@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../templates/head', {title: 'Actualizar'})%>
+  <body>
+    <%- include('../templates/header'); %>
+	<br>
+	<br>
+	<br>
+	<br>
+	
+	<a href="/admin/establecimientos"> volver</a>
+	<h1>Actualizar</h1>
+	<form action="/admin/establecimientos/<%= establecimiento.id %>/update" method="post">
+		<input name="id" type="text" value="<%= establecimiento.id %>">
+		<input name="nombre"type="text" value="<%= establecimiento.nombre %>">
+		<input name="tipo" type="text" value="<%= establecimiento.tipo %>">
+		<input name="descripcion" type="text" value="<%= establecimiento.descripcion %>">
+		<input name="lat" type="text" value="<%= establecimiento.ubicacion[0] %>">
+		<input name="lng" type="text" value="<%= establecimiento.ubicacion[1] %>">
+		<button type="submit">Actualizar </button>
+	</form>
+  </body>
+</html>
