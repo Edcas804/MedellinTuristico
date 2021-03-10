@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var establecimientosConntroller = require('../controllers/comercio');
+var establecimientosConntroller = require('../controllers/adminEstablecimientos');
 /* GET home page. */
 
 //lista de Establecimientos editables

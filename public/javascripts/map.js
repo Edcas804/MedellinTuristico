@@ -29,28 +29,34 @@ $.ajax({
 
 const showInMap = (lat, lng) => {
 
-  L.circle([lat, lng], {
-    color: '#f00',
-    fillColor: '#f03',
-    fillOpacity: 0.5,
-    radius: 500,
-  }).addTo(mymap);
-  document.querySelectorAll('.wrapperMapModal')[0].classList.remove('hide');
+	let newMark = [lat, lng];
+
+	mymap.setView(newMark, 13);
+
+	let circle = L.circle(newMark, {
+		color: '#f00',
+		fillColor: '#f03',
+		fillOpacity: 0.5,
+		radius: 500,
+	}).addTo(mymap);
+	circle.setLatLng(newMark);
+
+	document.querySelectorAll('.wrapperMapModal')[0].classList.remove('hide');
 };
 if(document.querySelectorAll('.wrapperMapModal')[0]){
-    document.querySelectorAll('.wrapperMapModal')[0].classList.add('hide')
+	document.querySelectorAll('.wrapperMapModal')[0].classList.add('hide')
 }
 if (navigator.geolocation) {
-  //check if geolocation is available
-  navigator.geolocation.watchPosition(function(position) {
-    L.marker([position.coords.latitude, position.coords.longitude])
-      .addTo(mymap)
-      .bindPopup(`<p>Tu estás aquí</p>`);
-    L.circle([position.coords.latitude, position.coords.longitude], {
-      color: '#0af',
-      fillColor: '#0cf',
-      fillOpacity: 0.5,
-      radius: 500,
-    }).addTo(mymap);
-  });
+	//check if geolocation is available
+	navigator.geolocation.watchPosition(function(position) {
+		L.marker([position.coords.latitude, position.coords.longitude])
+			.addTo(mymap)
+			.bindPopup(`<p>Tu estás aquí</p>`);
+		L.circle([position.coords.latitude, position.coords.longitude], {
+			color: '#0af',
+			fillColor: '#0cf',
+			fillOpacity: 0.5,
+			radius: 500,
+		}).addTo(mymap);
+	});
 }

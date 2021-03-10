@@ -1,4 +1,7 @@
 @charset "UFT-8";
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@300&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -15,15 +18,19 @@ html {
   background: #555;
   border-radius: 10px;
 }
-$white-color: #fff;
+
+$white-color: #ccc;
 $black-color: #000;
 $hight-color: #f45;
 $topPadding: 70px;
-
 :root {
   --font-s-small: 0.8rem;
-  --font-s-medium: 1.1rem;
-  --font-s-large: 1.2rem;
+  --font-s-medium: 1rem;
+  --font-s-large: 1.5rem;
+  --white-color: #eee;
+  --black-color: #000;
+  --hight-color: #f45;
+  --topPadding: 70px;
 }
 @mixin flexCenter {
   display: flex;
@@ -39,11 +46,20 @@ $topPadding: 70px;
   justify-content: space-around;
   align-items: center;
 }
+@mixin flexBetween{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 @import 'src/header', 'src/home', 'src/comercios';
 
+
 body {
+	background: var(--white-color);
+font-family: 'dosis', serif;
 }
+
 
 .hide {
   display: none;

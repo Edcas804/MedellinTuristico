@@ -1,29 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-	<%- include('../templates/head', {title: 'Establecimientos'})%>
-	<body>
-		<%- include('../templates/header'); %>
-		<div class="container">
-			<% establecimientos.forEach(function(establecimiento){ %>
-			<div class="cardComercio">
-				<div class="img">
-					<img src="/images/slider/background.jpg" alt="" />
-				</div>
-				<div class="info">
-					<h1 class="comercioId"><%= establecimiento.nombre%></h1>
-					<p><%= establecimiento.tipo %></p>
-					<p><%= establecimiento.descripcion %></p>
-					<a href="establecimientos/<%= establecimiento.nameURL%>">
-						Ver detalle
-					</a>
-					<button onclick="showInMap(<%= establecimiento.ubicacion[0] %>, <%= establecimiento.ubicacion[1] %>)">
-						Ver en el mapa
-					</button>
-				</div>
-			</div>
-			<% }); %>
-			<%- include('../templates/map', {className: true})%>
-		</div>
-	<script src="/javascripts/map.js"></script>
+  <%- include('../templates/head', {title: 'Establecimientos'})%>
+  <body>
+    <%- include('../templates/header'); %>
+    <div class="container">
+		<% var num = 1%>
+      <% establecimientos.forEach(function(establecimiento){  %>
+      <div class="cardComercio">
+        <div class="img">
+			<img src="/images/slider/background<%= num %>.jpg" alt="" />
+        </div>
+        <div class="info">
+          <h1 class="comercioId"><%= establecimiento.nombre%></h1>
+          <div class="wrapperTipo">
+            <p class="tipo">
+              <i class="material-icons">&#xe547;</i><%= establecimiento.tipo %>
+            </p>
+			<p>
+			<i class="material-icons star">&#xe838;</i>
+			<span>4.5</span>
+			</p>
+          </div>
+          <p class=""><%= establecimiento.descripcion %></p>
+          <div class="wrapperControls">
+            <a
+              class="info-link"
+              href="establecimientos/<%= establecimiento.nameURL%>"
+            >
+              <i class="material-icons">&#xe157;</i>
+              <span>Ver Sitio</span>
+            </a>
+            <button class="ubicacion"
+              onclick="showInMap(<%= establecimiento.ubicacion[0] %>, <%= establecimiento.ubicacion[1] %>)"
+            >
+              <i class="material-icons">&#xe0c8;</i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <% num++;  }); %> <%- include('../templates/map', {className: true})%>
+    </div>
+    <script src="/javascripts/map.js"></script>
   </body>
 </html>

@@ -7,10 +7,11 @@
       <div class="buttonNew">
         <a href="/admin/establecimientos/create">+</a>
       </div>
+		<% var num = 1%>
       <% establecimientos.forEach(function(establecimiento){ %>
       <div class="cardComercio">
         <div class="img">
-          <img src="/images/slider/background.jpg" alt="" />
+			<img src="/images/slider/background<%= num %>.jpg" alt="" />
         </div>
         <div class="info">
           <h1><%= establecimiento.id %></h1>
@@ -31,7 +32,7 @@
 		  </p>
         </div>
       </div>
-      <% }); %>
+      <% num++;}); %>
     </div>
   </body>
 </html>
