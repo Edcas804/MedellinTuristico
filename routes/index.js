@@ -1,9 +1,7 @@
 var express = require('express');
 var router = express.Router();
-
+var establecimientosController = require('../controllers/establecimientos');
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Medellín Turistico'});
-});
+router.get('/', establecimientosController.Establecimientos_list_home_get);
 
 module.exports = router;

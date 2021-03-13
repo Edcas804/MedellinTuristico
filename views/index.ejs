@@ -1,45 +1,52 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-	<%- include('templates/head', {title: 'Todo en Medellín '}); %>
-<body>
-	<%- include('templates/header'); %>
-	<div class="mainSlider">
-	  <div class="wrapper"><img class="imgSlider fade" src="/images/slider/background2.jpeg"/><img class="imgSlider fade" src="/images/slider/background.png"/><img class="imgSlider fade" src="/images/slider/background.jpg"/><img class="imgSlider fade" src="/images/slider/background3.jpg"/><img class="imgSlider fade" src="/images/slider/background2.jpeg"/><img class="imgSlider fade" src="/images/slider/background6.jpg"/>
-		<div class="dots"></div>
-		<div class="textSlider">
-		  <h2>Miles de lugares para visitar y disfrutar </h2>
-		  <p>Medellín es el lugar para compartir, soñar y disfrutar los momentos mas increibles de tu vida.</p>
-		</div>
-		<span class="next-prev left" onclick="changeSlider(-1, &quot;next&quot;)"><</span>
-		<span class="next-prev right" onclick="changeSlider(1, &quot;next&quot;)">> </span>
-	  </div>
-	</div>
-	<nav class="mainNav">
-	  <ul>
-		<li>Centros comerciales </li>
-		<li>Historia y cultura</li>
-		<li>Al aire libre</li>
-		<li>Restaurantes</li>
-		<li>Diversion</li>
-		<li>Moda</li>
-	  </ul>
-	</nav>
-	<div class="mainInfo">
-		<div class="wrapperInfo">
-			<div class="cardInfo itemInfo">
-				<h3>Lugares para soñar</h3>
-				<p>
-				Si estás de paseo por Colombia, no puedes dejar de visitar los sitios turísticos de Medellín, cuna de grandes artistas como Fernando Botero, museos y espacios culturales para disfrutar del arte. Además, por estar anclada en el Valle de Aburrá, es una zona rica en bosques, lagunas y parques. No tendrás que preocuparte de qué hacer en Medellín, pues su oferta turística es muy amplia. </p>
-			</div><img class="itemInfo" src="/images/background9.png" title="Medellín Turistico"/><img class="itemInfo" src="/images/background10.jpg" title="Medellín Turistico"/>
-			<div class="cardInfo itemInfo">
-				<h3>Lugares para soñar</h3>
-				<p>
-				Si estás de paseo por Colombia, no puedes dejar de visitar los sitios turísticos de Medellín, cuna de grandes artistas como Fernando Botero, museos y espacios culturales para disfrutar del arte. Además, por estar anclada en el Valle de Aburrá, es una zona rica en bosques, lagunas y parques. No tendrás que preocuparte de qué hacer en Medellín, pues su oferta turística es muy amplia. </p>
-			</div>
-		</div>
-		<%- include('templates/map', {className: false})%> 
-	</div>
-<script src="/javascripts/main.js"></script>
-<script src="/javascripts/map.js"></script>
-</body>
+  <%- include('templates/head', {title: 'Todo en Medellín '}) %>
+  <body>
+    <%- include('templates/header'); %>
+    <div class="mainSlider">
+      <div class="wrapper">
+        <img class="imgSlider fade" src="/images/slider/background2.jpeg" /><img
+          class="imgSlider fade"
+          src="/images/slider/background.png"
+        /><img class="imgSlider fade" src="/images/slider/background.jpg" /><img
+          class="imgSlider fade"
+          src="/images/slider/background3.jpg"
+        /><img
+          class="imgSlider fade"
+          src="/images/slider/background2.jpeg"
+        /><img class="imgSlider fade" src="/images/slider/background6.jpg" />
+        <div class="wrapper-dots-text">
+          <div class="textSlider">
+            <h2>Miles de lugares para visitar y disfrutar</h2>
+            <p>
+              Medellín es el lugar para compartir, soñar y disfrutar los
+              momentos mas increibles de tu vida.
+            </p>
+          </div>
+          <div class="dots"></div>
+        </div>
+        <span class="next-prev left" onclick='changeSlider(-1, "next")'><</span>
+        <span class="next-prev right" onclick='changeSlider(1, "next")'
+          >>
+        </span>
+      </div>
+    </div>
+	<%- include('templates/menuTipos')%>
+    <div class="mainInfo">
+      <div class="container" style="padding: 0">
+        <div class="titleElement">
+          <h2>Cientos de lugares para que disfrutes cada día</h2>
+        </div>
+        <%- include('templates/cardEstablecimiento', {ubicacion: false}) %>
+      </div>
+      <div class="titleElement">
+        <h2>Encuentra los lugares mas cerca o lejos de tu casa.</h2>
+      </div>
+      <%- include('templates/map', {className: false})%>
+    </div>
+    <script src="/javascripts/main.js"></script>
+    <script src="/javascripts/map.js"></script>
+    <script src="/javascripts/theme.js"></script>
+    <script src="/javascripts/showHide.js"></script>
+  </body>
 </html>

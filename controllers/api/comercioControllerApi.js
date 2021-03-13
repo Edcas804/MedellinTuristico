@@ -11,6 +11,7 @@ exports.Comercios_create_post = function(req, res) {
   let comer = new Comercio(
     req.body.id,
     req.body.nombre,
+    req.body.photoURL,
     req.body.tipo,
     req.body.descripcion,
   );
@@ -26,6 +27,7 @@ exports.Comercios_update_post = function(req, res) {
 
   comercio.id = req.body.id;
   comercio.nombre = req.body.nombre;
+  comercio.photoURL= req.body.photoURL;
   comercio.tipo = req.body.tipo;
   comercio.descripcion = req.body.descripcion;
   comercio.ubicacion = [req.body.lat, req.body.lng];

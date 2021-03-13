@@ -1,0 +1,38 @@
+      <% establecimientos.forEach(function(establecimiento){  %>
+      <div class="cardComercio">
+        <div class="img">
+			<img src="<%= establecimiento.photoURL %>" alt="" />
+        </div>
+        <div class="info">
+          <h1 class="comercioId"><%= establecimiento.nombre%></h1>
+          <div class="wrapperTipo">
+            <p class="tipo">
+              <i class="material-icons">&#xe547;</i><%= establecimiento.tipo %>
+            </p>
+			<p>
+			<i class="material-icons star">&#xe838;</i>
+			<span>4.5</span>
+			</p>
+          </div>
+          <p class=""><%= establecimiento.descripcion %></p>
+          <div class="wrapperControls">
+            <a
+              class="info-link"
+              href="establecimientos/<%= establecimiento.nameURL%>"
+            >
+              <i class="material-icons">&#xe157;</i>
+              <span>Ver Sitio</span>
+            </a>
+			<% if(ubicacion){ %>
+				<button class="ubicacion"
+				  onclick="showInMap(<%= establecimiento.ubicacion[0] %>, <%= establecimiento.ubicacion[1] %>)"
+				>
+				  <i class="material-icons">&#xe0c8;</i>
+				</button>
+			<% }else{  %>
+			    <p></p>
+			<% } %>
+          </div>
+        </div>
+      </div>
+      <%  }); %> 

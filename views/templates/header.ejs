@@ -2,12 +2,15 @@
   <div class="logo"><a href="/">
 	  <h1>Todo en Medellín  </h1></a></div>
   <nav class="mainMenu">
-	<ul>
-	  <li> <a href="/">Inicio</a></li>
-	  <li> <a href="/establecimientos">Establecimientos </a></li>
-	  <li> <a href="/contacto">Contacto</a></li>
-	  <li> <a href="/sobre_nosotros">Sobre Nosotros</a></li>
-	  <button class="login"> <a  "href="">Iniciar</a></button>
+	<ul  id="ulHeader">
+	  <li class="toggleMenuHe"> <a href="/">Inicio</a></li>
+	  <li class="toggleMenuHe"> <a href="/establecimientos">Establecimientos </a></li>
+	  <li class="toggleMenuHe"> <a href="/contacto">Contacto</a></li>
+	  <li class="toggleMenuHe"> <a href="/sobre_nosotros">Sobre Nosotros</a></li>
+	  <button class="login toggleMenuHe"> <a  "href="">Iniciar</a></button>
+      <li class="material-icons dark-light toggleMenuHe"  onclick="darkLight()">&#xe430;</li>
+	  <button class="closeMenuHeader " onclick="showHideMenuHeader()">X</button>
 	</ul>
+    <button class="toggleMenu material-icons" onclick="showHideMenuHeader()">&#xe5d2;</button>
   </nav>
 </header>

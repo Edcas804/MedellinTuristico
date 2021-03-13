@@ -9,20 +9,18 @@ var contactoRouter = require('./routes/contacto');
 var sobreNosotrosRouter = require('./routes/sobre_nosotros');
 var establecimientosAdminRouter = require('./routes/adminEstablecimientos');
 //cliente
-var establecimientosRouter= require('./routes/establecimientos');
+var establecimientosRouter = require('./routes/establecimientos');
 //api
 var comerciosApiRouter = require('./routes/api/comercios');
 
 var app = express();
 
-var mongoose = require('mongoose');
-var mongoDB = 'mongodb://localhost/MedellinTuristico';
-mongoose.connect(mongoDB, {useNewUrlParser: true});
-mongoose.Promise = global.Promise;
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'MongoDB connection error'));
-
- 
+//var mongoose = require('mongoose');
+//var mongoDB = 'mongodb://localhost/establecimientos';
+//mongoose.connect(mongoDB, {useNewUrlParser: true});
+//mongoose.Promise = global.Promise;
+//var db = mongoose.connection;
+//db.on('error', console.error.bind(console, 'mongoDB connection error'));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -30,7 +28,7 @@ app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -40,7 +38,7 @@ app.use('/contacto', contactoRouter);
 app.use('/sobre_nosotros', sobreNosotrosRouter);
 app.use('/establecimientos', establecimientosRouter);
 //admin
-app.use('/admin/establecimientos', establecimientosAdminRouter );
+app.use('/admin/establecimientos', establecimientosAdminRouter);
 //API
 app.use('/api/comercios', comerciosApiRouter);
 
@@ -57,7 +55,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.render('error', {error: err});
 });
 
 module.exports = app;

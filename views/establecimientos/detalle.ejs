@@ -1,9 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <%- include('../templates/head', {title: establecimiento.nombre })%>
   <body>
     <%- include('../templates/header'); %>
-	
-</body>
+
+    <div class="wrapperEstablecimiento">
+      <div class="item-detalle item-img">
+        <img src="<%= establecimiento.photoURL%>" alt="" />
+      </div>
+      <div class="item-detalle item-info">
+        <h2><%- establecimiento.nombre %></h2>
+        <p>
+          <i class="material-icons">&#xe547;</i>
+          <b><%= establecimiento.tipo %></b>
+        </p>
+        <p class="starts">
+          <i class="material-icons star">&#xe838;</i>
+          <span>4.5</span>
+        </p>
+        <p class="starts">
+          <i class="material-icons star">&#xe916;</i>
+          <span>
+            <b>Horario:</b> Lunes a viernes de 12:00 p.m a 12:00 a.m (Abierto
+            ahora)
+          </span>
+        </p>
+        <p class="descripcion-detalle">
+          <%= establecimiento.descripcion %>
+          <br />
+          Medellín es efectivamente una localidad para experimentar con todos
+          tus más íntimos sentidos, ya que existen numerosos motivos que la
+          transforma en un destino turístico de primera categoría de América del
+          Sur. Denominada como la ciudad de la eterna primavera, la localidad se
+          regocija de una temperatura y clima de primavera durante todo el año,
+          igualmente es un centro cultural tropical y rico.
+        </p>
+      </div>
+    </div>
+    <script src="/javascripts/theme.js"></script>
+    <script src="/javascripts/showHide.js"></script>
+  </body>
 </html>
