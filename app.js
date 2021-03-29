@@ -31,8 +31,10 @@ app.use('/', indexRouter);
 app.use('/contacto', contactoRouter);
 app.use('/sobre_nosotros', sobreNosotrosRouter);
 app.use('/establecimientos', establecimientosRouter);
+
 //admin
 app.use('/admin/establecimientos', establecimientosAdminRouter);
+
 //API
 app.use('/api/comercios', comerciosApiRouter);
 
