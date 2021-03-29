@@ -15,12 +15,6 @@ var comerciosApiRouter = require('./routes/api/comercios');
 
 var app = express();
 
-//var mongoose = require('mongoose');
-//var mongoDB = 'mongodb://localhost/establecimientos';
-//mongoose.connect(mongoDB, {useNewUrlParser: true});
-//mongoose.Promise = global.Promise;
-//var db = mongoose.connection;
-//db.on('error', console.error.bind(console, 'mongoDB connection error'));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
